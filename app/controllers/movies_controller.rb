@@ -3,8 +3,7 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
-     #@movies = Movie.all
-    # @movies = Movie.paginate(page: params[:page], per_page: 6)
+     
      @movies =
        if (params[:movie])
            result = 
