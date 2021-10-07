@@ -1,8 +1,7 @@
 
 <h1>Listado de Movies</h1>
 
-
-  <%= form_with url: '/', method: :get do |form| %>
+  <%= form_with url: '/movies', method: :get do |form| %>
   <%= form.label "Buscador: " %>
   <%= form.text_field :movie %>
   <%= form.submit "Buscar" %>

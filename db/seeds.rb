@@ -10,7 +10,7 @@ movies = JSON.parse(peliculas)
 puts 'seeding data...'
 
     movies.each do |movie|
-        Movie.create!(name: movie['Title'], director: movie['Director'], summary:movie['Plot'])
+        Movie.create!(name: movie['Title'], director: movie['Director'], summary: movie['Plot'])
     end
 puts '********done*********' 
 

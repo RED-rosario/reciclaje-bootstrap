@@ -3,14 +3,18 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
-    @movies = Movie.paginate(page: params[:page], per_page: 6)
-      if (params[:movie])
-        @movies = Movie.where('name LIKE ?', "%#{params[:movie].downcase}%")
-                  Movie.where('director LIKE ?', "%#{params[:movie].downcase}%")      
-                  Movie.where('summary LIKE ?', "%#{params[:movie].downcase}%")
-      else
-        @movie = new_movie_path
-      end
+     #@movies = Movie.all
+    # @movies = Movie.paginate(page: params[:page], per_page: 6)
+     @movies =
+       if (params[:movie])
+           result = 
+                   Movie.where('name LIKE ?', "%#{params[:movie].downcase}%")||
+                   Movie.where('director LIKE ?', "%#{params[:movie].downcase}%")||     
+                   Movie.where('summary LIKE ?', "%#{params[:movie].downcase}%")
+           result.paginate(page: params[:page], per_page: 6)  
+       else
+                   Movie.paginate(page: params[:page], per_page: 6)
+       end
   end
 
   # GET /movies/1 or /movies/1.json
