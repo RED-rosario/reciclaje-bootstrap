@@ -1,5 +1,5 @@
 
-<h1>Listado de Movies</h1>
+<h1 class="texto-rojo">Listado de Movies</h1> 
 
   <%= form_with url: '/movies', method: :get do |form| %>
   <%= form.label "Buscador: " %>
@@ -7,7 +7,7 @@
   <%= form.submit "Buscar" %>
 <% end %>
 <ul>
-  
+
 <h1>Movies</h1>
 
 <table>
@@ -38,5 +38,7 @@
 <br>
 <%= will_paginate @movies %>
 
+
 <%= link_to 'New Movie', new_movie_path %>
+
 
